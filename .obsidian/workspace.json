@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "c1481c508a23581c",
+    "type": "split",
+    "children": [
+      {
+        "id": "051a84109d429c52",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4d62591a5ce9084",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Lectures/2024_IntroductionIntoHRI.pptx.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "2024_IntroductionIntoHRI.pptx"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "da78f297e1aa1486",
+    "type": "split",
+    "children": [
+      {
+        "id": "ad43d7f2e2c87591",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8fff6ecb2b2e4ad8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fee3071e968a264b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0b14488479ddab44",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 333.5
+  },
+  "right": {
+    "id": "27bd7e7adec25fac",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc1de126ec401f72",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6644598620d3d9bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lectures/2024_IntroductionIntoHRI.pptx.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2024_IntroductionIntoHRI.pptx"
+            }
+          },
+          {
+            "id": "1ddf6537ada2bc61",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lecture Notes/Lecture 10 - Explainable AI.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Lecture 10 - Explainable AI"
+            }
+          },
+          {
+            "id": "60b02355ac4e96b4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "43d3a38a0a61f8e6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lecture Notes/Lecture 10 - Explainable AI.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Lecture 10 - Explainable AI"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8fff6ecb2b2e4ad8",
+  "lastOpenFiles": [
+    "git_version/README.md",
+    "git_version",
+    "Images/Pasted image 20250221225154.png",
+    "Untitled.md",
+    "Images",
+    "Untitled.base",
+    "🤖 Promt.md",
+    "tutorials/Tutorial 4/ws2425-iui-tutorial-04.pdf",
+    "Lecture Notes/Lecture 12 - IUIs for Software Development.md",
+    "Lecture Notes/Lecture 11 - Bias Ethics.md",
+    "Lecture Notes/Lecture 5 - Introduction to NLP and Text Processing.md",
+    "Lecture Notes/Lecture 3 - Users' Context in Smart Environments.md",
+    "Lecture Notes/Lecture 2 - Introduction to IUI (2).md",
+    "Lecture Notes/Lecture 1 - Introduction to IUI (1).md",
+    "Lecture Notes/Lecture 0 - Introduction to HRI.md",
+    "Lecture Notes/pdfs/IUI-Lecture-Notes-2025.pdf",
+    "Lecture Notes/Lecture 9 - Text Entry.md",
+    "Lecture Notes/Lecture 8 - Security and Privacy.md",
+    "Lecture Notes/Lecture 10 - Explainable AI.md",
+    "tutorials/IUI Tutorial 3.pdf",
+    "tutorials/IUI Tutorial 3.pdf.crdownload",
+    "Lecture Notes/pdfs/IUI-Lecture-Notes-output.pdf",
+    "Lecture Notes/pdfs/IUI-Lecture-Notes-output.pdf.crdownload",
+    "Lecture Notes/pdfs/IUI-Lecture-Notes.pdf",
+    "Lecture Notes/Lecture 7 - Recommender Systems.md",
+    "Lecture Notes/Lecture 6 - NLP 2.md",
+    "Lecture Notes/Lecture 4 - Voice User Interfaces (VUI).md",
+    "Images/Pasted image 20250224161412.png",
+    "Images/Pasted image 20250224161134.png",
+    "Images/Pasted image 20250224160813.png",
+    "Images/Pasted image 20250224160013.png",
+    "Images/Pasted image 20250224153917.png",
+    "Images/Pasted image 20250224153826.png",
+    "Images/Pasted image 20250224153732.png",
+    "Images/Pasted image 20250224153610.png",
+    "Images/Pasted image 20250224153545.png",
+    "Lecture 6 - NLP 2.md"
+  ]
+}

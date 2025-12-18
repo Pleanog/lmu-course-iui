@@ -1,0 +1,278 @@
+{
+ cells [
+  {
+   cell_type code,
+   execution_count null,
+   id adc280e5,
+   metadata {},
+   outputs [],
+   source [
+    text = Hello world! This is an example sentence to demonstrate tokenization.
+   ]
+  },
+  {
+   cell_type markdown,
+   id 3057d907,
+   metadata {},
+   source [
+    # Tokenizationn,
+    ### Simple whitespace tokenization
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id e556c9cf,
+   metadata {},
+   outputs [],
+   source [
+    # Perform the simplest form of tokenization by splitting text by whitespaces
+   ]
+  },
+  {
+   cell_type markdown,
+   id 4d2d2ff1,
+   metadata {},
+   source [
+    ### Advanced Tokenization 
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id f01bdbdf,
+   metadata {},
+   outputs [],
+   source [
+    from nltk.tokenize import word_tokenizen,
+    n,
+    # There are many options for tokenizing in may of the libs, n,
+    # e.g. the word_tokenize function in the Natural Language Toolkitn,
+    # TODO apply the word_tokenize function to the text and view the resultsn,
+    tokens_nltk_word = word_tokenize(text)n,
+    print(NLTKt, tokens_nltk_word)
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id fc456f6d,
+   metadata {},
+   outputs [],
+   source [
+    # More pretrained tokenizers can be found online and n,
+    # easily loaded, e.g. as part of the transformers lib n,
+    # httpshuggingface.codocstransformersmodel_docauto#transformers.AutoTokenizer.from_pretrainedn,
+    n,
+    from transformers import AutoTokenizern,
+    n,
+    bert_tokenizer = AutoTokenizer.from_pretrained(bert-base-uncased)n,
+    gpt2_tokenizer = AutoTokenizer.from_pretrained(gpt2)n,
+    n,
+    # Both of these can be called directly with the text.n,
+    # However, if you just want the individual tokens, and n,
+    # no contextual info, use the `.tokenize()` function instead n,
+    # ```n,
+    # tokenize(self, text TextInput, kwargs) - List[str]n,
+    # ```n,
+    # httpsgithub.comhuggingfacetransformersblobmainsrctransformerstokenization_utils.py#L622n,
+    n,
+    n,
+    # TODO Tokenize using BERT tokenizern,
+    n,
+    # TODO Tokenize using GPT-2 tokenizern
+   ]
+  },
+  {
+   cell_type markdown,
+   id fc8e7eaa,
+   metadata {},
+   source [
+     ```n,
+    Compare the different results of the tokenization. What might be the reason for the differencesn,
+    ```
+   ]
+  },
+  {
+   cell_type markdown,
+   id 4c36e0ee,
+   metadata {},
+   source [
+    ### Stemming
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id e34301a6,
+   metadata {},
+   outputs [],
+   source [
+    from nltk.stem.snowball import EnglishStemmern,
+    n,
+    stemmer = EnglishStemmer()n,
+    n,
+    # TODO Use the `stem` method of the EnglishStemmer n,
+    # on the different tokenization results. n,
+    # What differences are there and from where do they come 
+   ]
+  },
+  {
+   cell_type markdown,
+   id eccfcccd,
+   metadata {},
+   source [
+    # Word Embedding 
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id dcb442d1,
+   metadata {},
+   outputs [],
+   source [
+    from transformers import AutoModeln,
+    import torchn,
+    n,
+    # Word embeddings requires a model that needs to be n,
+    # trained on existing texts (for text embeddings).n,
+    # Fortunately, the transformers lib has a few models n,
+    # for us alreadyn,
+    n,
+    # Load modeln,
+    model = AutoModel.from_pretrained(bert-base-uncased)n,
+    n,
+    # Tokenize and get embeddingsn,
+    inputs = bert_tokenizer(text, return_tensors=pt)n,
+    n,
+    embeddings = model(inputs).last_hidden_staten,
+    n,
+    # Get embeddings for each tokenn,
+    print(Token embeddings shape, embeddings.shape)n,
+    print(embeddings)
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id 3e1fbdee,
+   metadata {},
+   outputs [],
+   source [
+    from sklearn.decomposition import PCAn,
+    n,
+    # Reduce dimensionality of embeddings since visualizing 768 dimensions is quite hardn,
+    pca = PCA(n_components=2)n,
+    reduced_embeddings = pca.fit_transform(embeddings[0].detach().numpy())n,
+    n,
+    # Print the reduced 2D representation of the embeddings
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id 204a3b49,
+   metadata {
+    scrolled false
+   },
+   outputs [],
+   source [
+    import matplotlib.pyplot as pltn,
+    n,
+    # Plot (reduced) embeddingsn,
+    plt.figure(figsize=(10, 5))n,
+    n,
+    for i, token in enumerate(...)n,
+        plt.scatter(reduced_embeddings[i, 0], reduced_embeddings[i, 1], marker='o')n,
+        plt.text(reduced_embeddings[i, 0] + 0.01, reduced_embeddings[i, 1] + 0.01, token, fontsize=12)n,
+    n,
+    plt.title(Token Embeddings (Reduced to 2D))n,
+    plt.xlabel(PCA Component 1)n,
+    plt.ylabel(PCA Component 2)n,
+    n,
+    plt.show()
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id 1916ca7d,
+   metadata {},
+   outputs [],
+   source [
+    # Since words are vectors in space, we can calculate distances between two wordsn,
+    n,
+    word_pairs = [n,
+        ('Table', 'running'),n,
+        ('mountain', 'keyboard'),n,
+        ('shoe', 'banana'),n,
+        ('ocean', 'telephone'),n,
+        ('guitar', 'paper'),n,
+        ('king', 'queen'),n,
+        ('man', 'woman'),n,
+        ('car', 'vehicle'),n,
+        ('apple', 'fruit'),n,
+        ('dog', 'puppy'),n,
+    ]
+   ]
+  },
+  {
+   cell_type code,
+   execution_count null,
+   id 036c5fe3,
+   metadata {},
+   outputs [],
+   source [
+    from sklearn.metrics.pairwise import cosine_similarityn,
+    n,
+    # Function to get the embedding for a single wordn,
+    def get_embedding(word)n,
+        n,
+        Return the embedding vector for a given wordn,
+        n,
+        # TODO Use the same steps as aboven,
+    n,
+        n,
+    # Calculate cosine similarity between embeddings of each word pairn,
+    for word1, word2 in word_pairsn,
+        emb1 = get_embedding(word1)n,
+        emb2 = get_embedding(word2)n,
+        n,
+        # Compute cosine similarityn,
+        similarity = cosine_similarity([emb1], [emb2])[0][0]n,
+        n,
+        print(fCosine similarity between '{word1}' and '{word2}'t{similarity.6f})
+   ]
+  },
+  {
+   cell_type markdown,
+   id 7eefc3b6,
+   metadata {},
+   source [
+    If you have time, try to visualize the words from the wordpairs similar to the scatter plot above
+   ]
+  }
+ ],
+ metadata {
+  kernelspec {
+   display_name iui-venv,
+   language python,
+   name iui-venv
+  },
+  language_info {
+   codemirror_mode {
+    name ipython,
+    version 3
+   },
+   file_extension .py,
+   mimetype textx-python,
+   name python,
+   nbconvert_exporter python,
+   pygments_lexer ipython3,
+   version 3.10.7
+  }
+ },
+ nbformat 4,
+ nbformat_minor 5
+}
